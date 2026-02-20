@@ -1,26 +1,108 @@
-@import "tailwindcss";
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --app-height: 100%;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.cover_section {
+  height: var(--app-height);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.0582010582010584vw;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+.regular_paragraph.nav_logo {
+  color: inherit;
+}
+
+.show-loader #loader {
+  display: block;
+}
+
+@media screen and (max-width: 1200px) {
+  .regular_paragraph,
+  .text_link {
+    font-size: 12.6984126984127px;
+  }
+}
+
+::selection {
+  background: #f20e0e;
+  color: #ffffff;
+  text-shadow: none;
+}
+
+.arrow-span {
+  font-family: monospace;
+}
+
+.selected-work-image-ratio {
+  overflow: hidden;
+  position: relative;
+  padding-top: 100% !important;
+}
+
+.selected-work-item.dark-bg-tint .selected-work-image-ratio::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.selected-work-item.img-top .selected-img-bg,
+.selected-work-item.img-top .selected-front-img {
+  object-position: top !important;
+}
+
+.blurred-bg {
+  filter: blur(20px);
+  transform: scale(1.1);
+  transition: transform 0.4s ease;
+}
+
+.selected-work-item:hover .blurred-bg {
+  transform: scale(1.15);
+}
+
+.selected-work-tags {
+  display: flex;
+  gap: 0.5em;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.selected-work-item:hover .selected-work-tags {
+  opacity: 1;
+}
+
+.selected-work-item .current-selected-work.no-link {
+  cursor: default;
+}
+
+@media only screen and (min-width: 991px) {
+  .archive_item:nth-child(3n + 1) {
+    margin-top: -4em;
+  }
+  .archive_item:nth-child(3n + 2) {
+    margin-top: 2.2em;
+  }
+  .archive_item:nth-child(3n + 3) {
+    margin-top: -4em;
+  }
+  .archive_item:nth-child(1) {
+    margin-top: 2em;
+  }
+  .archive_item:nth-child(2) {
+    margin-top: 8em;
+  }
+  .archive_item:nth-child(3) {
+    margin-top: 2em;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

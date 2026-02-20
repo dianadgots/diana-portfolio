@@ -34,7 +34,7 @@ export default function Services() {
                 />
               </div>
             </div>
-            <div className="service-img-contain _2">
+            <div className="service-img-contain _2 hide-mobile">
               <div className="service-img-height">
                 <img
                   src="/imgs/public/imgs/me/2.jpg"

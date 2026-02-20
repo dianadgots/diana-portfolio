@@ -102,3 +102,84 @@ body {
 ::-webkit-scrollbar {
   display: none;
 }
+
+/* ── Mobile Overrides ────────────────────────────────── */
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 767px) {
+  .hide-mobile {
+    display: none !important;
+  }
+
+  .services-photo {
+    justify-content: center;
+  }
+
+  .service-img-contain {
+    width: 70vw !important;
+    transform: rotate(3.02deg) !important;
+  }
+
+  .services-wrapper {
+    padding-top: 6em;
+    padding-bottom: 6em;
+  }
+
+  .services-left {
+    padding-top: 4em;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .service-img-contain {
+    width: 65vw !important;
+  }
+
+  .services-wrapper {
+    padding-top: 8em !important;
+    padding-bottom: 8em !important;
+  }
+
+  .services-left {
+    padding-top: 6em !important;
+  }
+
+  .hero-content {
+    padding-top: 15em;
+    padding-bottom: 10em;
+  }
+
+  .home-img-ration {
+    width: 85vw;
+    max-width: 100%;
+  }
+
+  .selected-work-container {
+    padding-top: 10em;
+    padding-bottom: 10em;
+  }
+
+  .front-selected-ratio {
+    display: none !important;
+  }
+
+  .selected-work-title {
+    position: relative;
+    inset: auto;
+    padding: 2em;
+  }
+
+  .footer-content {
+    padding-top: 10em;
+    padding-bottom: 15em;
+  }
+
+  .utility-page-content {
+    padding-left: 6em;
+    padding-right: 6em;
+  }
+}

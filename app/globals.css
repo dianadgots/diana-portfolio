@@ -78,10 +78,6 @@ body {
   opacity: 1;
 }
 
-.selected-work-item .current-selected-work.no-link {
-  cursor: default;
-}
-
 @media only screen and (min-width: 991px) {
   .archive_item:nth-child(3n + 1) {
     margin-top: -4em;

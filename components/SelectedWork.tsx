@@ -5,7 +5,7 @@ const workItems = [
     slug: "work-1",
     title: "Bonnie Jean",
     frontImg: "/imgs/public/imgs/selected_work/1.png",
-    frontAlt: "Make-up artistry by Diana Gots",
+    frontAlt: "Bonnie Jean",
     tags: [
       { label: "paid social", black: false },
       { label: "creative direction", black: false },
@@ -18,7 +18,7 @@ const workItems = [
     slug: "work-2",
     title: "Bonnie Jean",
     frontImg: "/imgs/public/imgs/selected_work/2.png",
-    frontAlt: "Make-up artistry by Diana Gots",
+    frontAlt: "Bonnie Jean",
     tags: [
       { label: "paid social", black: false },
       { label: "creative direction", black: false },
@@ -50,7 +50,6 @@ const workItems = [
     ],
     hasTitle: true,
     titleTop: true,
-    noLink: true,
   },
   {
     slug: "winkd",
@@ -110,45 +109,26 @@ export default function SelectedWork() {
                         className="selected-img-bg blurred-bg"
                       />
                     </div>
-                    {item.noLink ? (
-                      <div className="current-selected-work w-inline-block no-link">
-                        {item.hasTitle && item.titleTop && (
-                          <div className="selected-work-title">
-                            <h3 className="small_heading text-color-white">{item.title}</h3>
-                          </div>
-                        )}
-                        <div className="front-selected-ratio">
-                          <div className="front-selected-height">
-                            <img
-                              src={item.frontImg}
-                              alt={item.frontAlt}
-                              className="selected-front-img"
-                            />
-                          </div>
+                    <a
+                      href={item.href ?? `/work/${item.slug}`}
+                      className="current-selected-work w-inline-block"
+                      {...(item.href && { target: "_blank", rel: "noopener noreferrer" })}
+                    >
+                      {item.hasTitle && item.titleTop && (
+                        <div className="selected-work-title">
+                          <h3 className="small_heading text-color-white">{item.title}</h3>
+                        </div>
+                      )}
+                      <div className="front-selected-ratio">
+                        <div className="front-selected-height">
+                          <img
+                            src={item.frontImg}
+                            alt={item.frontAlt}
+                            className="selected-front-img"
+                          />
                         </div>
                       </div>
-                    ) : (
-                      <a
-                        href={item.href ?? `/work/${item.slug}`}
-                        className="current-selected-work w-inline-block"
-                        {...(item.href && { target: "_blank", rel: "noopener noreferrer" })}
-                      >
-                        {item.hasTitle && item.titleTop && (
-                          <div className="selected-work-title">
-                            <h3 className="small_heading text-color-white">{item.title}</h3>
-                          </div>
-                        )}
-                        <div className="front-selected-ratio">
-                          <div className="front-selected-height">
-                            <img
-                              src={item.frontImg}
-                              alt={item.frontAlt}
-                              className="selected-front-img"
-                            />
-                          </div>
-                        </div>
-                      </a>
-                    )}
+                    </a>
                     {item.hasTitle && !item.titleTop && (
                       <div className="selected-work-title">
                         <h3 className="small_heading text-color-white">{item.title}</h3>

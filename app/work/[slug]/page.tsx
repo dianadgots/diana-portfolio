@@ -77,7 +77,7 @@ export default async function WorkPage({ params }: Props) {
             )}
             {(() => {
               const heroVideo = item.gallery?.find(
-                (m) => (("type" in m && m.type === "video") || /\.(mp4|webm|ogg|mov)$/i.test(m.src)) && !("galleryLeft" in m && m.galleryLeft)
+                (m) => (("type" in m && m.type === "video") || (m.src && /\.(mp4|webm|ogg|mov)$/i.test(m.src))) && !("galleryLeft" in m && m.galleryLeft)
               );
               if (heroVideo) {
                 return (
@@ -113,13 +113,13 @@ export default async function WorkPage({ params }: Props) {
             })()}
             {(() => {
               const heroVideo = item.gallery?.find(
-                (m) => (("type" in m && m.type === "video") || /\.(mp4|webm|ogg|mov)$/i.test(m.src)) && !("galleryLeft" in m && m.galleryLeft)
+                (m) => (("type" in m && m.type === "video") || (m.src && /\.(mp4|webm|ogg|mov)$/i.test(m.src))) && !("galleryLeft" in m && m.galleryLeft)
               );
               const galleryLeftVideo = item.gallery?.find(
                 (m) => ("type" in m && m.type === "video") && ("galleryLeft" in m && m.galleryLeft)
               );
               const filtered = item.gallery?.filter(
-                (m) => !("type" in m && m.type === "video") && !/\.(mp4|webm|ogg|mov)$/i.test(m.src)
+                (m) => !("type" in m && m.type === "video") && !(m.src && /\.(mp4|webm|ogg|mov)$/i.test(m.src))
               ) ?? [];
               const images = heroVideo ? filtered : filtered.slice(1);
               const belowImage = images.find((m) => "belowColumns" in m && m.belowColumns);
@@ -129,7 +129,7 @@ export default async function WorkPage({ params }: Props) {
                 const cols = (belowImage as { belowColumns?: number }).belowColumns ?? 2;
                 const stackItem = masonryItems.find((m) => "type" in m && m.type === "stack");
                 const singleImages = masonryItems.filter((m) => !("type" in m && m.type === "stack"));
-                const stackImages = stackItem && "images" in stackItem ? stackItem.images : [];
+                const stackImages = (stackItem && "images" in stackItem ? stackItem.images : []) ?? [];
                 const gridCols = galleryLeftVideo ? cols + 2 : cols + 1;
                 return (
                   <>
@@ -229,7 +229,7 @@ export default async function WorkPage({ params }: Props) {
                     </div>
                   )}
                   <div style={{ marginBottom: "2em" }}>
-                    <GalleryMasonry items={masonryItems} />
+                    <GalleryMasonry items={masonryItems as any} />
                   </div>
                 </>
               );

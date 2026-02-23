@@ -44,6 +44,32 @@ body {
   padding-top: 100% !important;
 }
 
+/* First item in its own row above the 2-column grid */
+.selected-work-first-column {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.75em;
+}
+
+.selected-work-item-first {
+  width: 100% !important;
+}
+
+.selected-work-item-first .selected-work-image-ratio {
+  padding-top: 60% !important;
+}
+
+/* new Bonnie Jean.jpg is 1846×1304 - wider aspect ratio ~1.42:1 */
+.selected-work-item-first .front-selected-ratio {
+  width: 90% !important;
+  max-width: 65em;
+}
+
+.selected-work-item-first .front-selected-height {
+  padding-top: 70.6% !important; /* 1304/1846 - matches image aspect ratio */
+}
+
 .selected-work-item.dark-bg-tint .selected-work-image-ratio::after {
   content: "";
   position: absolute;

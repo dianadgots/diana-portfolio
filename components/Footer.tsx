@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="footer-content">
           <div className="footer-contact-wrapper">
             <img
-              src="/imgs/632c36fab787b0e6308b6357_illustration_footer.svg"
+              src="/imgs/footer.png"
               alt=""
               className="footer_illustration"
             />

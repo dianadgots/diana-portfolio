@@ -7,7 +7,7 @@ export const workItems = [
   {
     slug: "work-1",
     title: "Bonnie Jean",
-    frontImg: "/imgs/public/imgs/bonnie%20work%201/1.png",
+    frontImg: "/imgs/public/imgs/selected_work/new%20Bonnie%20Jean.jpg",
     frontAlt: "Bonnie Jean",
     tags: [
       { label: "paid social", black: false },
@@ -37,22 +37,6 @@ export const workItems = [
         ],
       },
       { src: "/imgs/public/imgs/bonnie%20work%201/5.png", alt: "Bonnie Jean Back to School", belowColumns: 2 },
-    ],
-  },
-  {
-    slug: "work-2",
-    title: "Bonnie Jean",
-    frontImg: "/imgs/public/imgs/selected_work/2.png",
-    frontAlt: "Bonnie Jean",
-    tags: [
-      { label: "paid social", black: false },
-      { label: "creative direction", black: false },
-    ],
-    hasTitle: true,
-    titleTop: true,
-    externalUrl: "https://www.bonniejean.com",
-    gallery: [
-      { src: "/imgs/public/imgs/selected_work/2.png", alt: "Bonnie Jean" },
     ],
   },
   {

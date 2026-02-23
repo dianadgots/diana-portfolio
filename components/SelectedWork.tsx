@@ -14,9 +14,60 @@ export default function SelectedWork() {
             </p>
           </div>
           <div className="selected-work-grid">
+            {/* First item: its own column above the rest */}
+            {workItems[0] && (
+              <div className="selected-work-first-column">
+                <div
+                  key={workItems[0].slug}
+                  className={`selected-work-item selected-work-item-first${workItems[0].extraClass ? ` ${workItems[0].extraClass}` : ""}`}
+                >
+                  <div className="selected-work-image-ratio">
+                    <img
+                      src={workItems[0].frontImg}
+                      alt={workItems[0].frontAlt}
+                      className="selected-img-bg blurred-bg"
+                    />
+                  </div>
+                  <a
+                    href={`/work/${workItems[0].slug}`}
+                    className="current-selected-work w-inline-block"
+                  >
+                    {workItems[0].hasTitle && workItems[0].titleTop && (
+                      <div className="selected-work-title">
+                        <h3 className="small_heading text-color-white">{workItems[0].title}</h3>
+                      </div>
+                    )}
+                    <div className="front-selected-ratio">
+                      <div className="front-selected-height">
+                        <img
+                          src={workItems[0].frontImg}
+                          alt={workItems[0].frontAlt}
+                          className="selected-front-img"
+                        />
+                      </div>
+                    </div>
+                  </a>
+                  {workItems[0].hasTitle && !workItems[0].titleTop && (
+                    <div className="selected-work-title">
+                      <h3 className="small_heading text-color-white">{workItems[0].title}</h3>
+                    </div>
+                  )}
+                  <div className="selected-work-tags">
+                    {workItems[0].tags.map((tag, i) => (
+                      <div key={i} className={`tag-box${tag.black ? " is-black" : ""}`}>
+                        <p className={`regular_paragraph${tag.black ? " tag" : ""}`}>
+                          {tag.label}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+            {/* Rest: 2-column grid */}
             <div className="selected-work-wrapper">
               <div className="selected-work-list">
-                {workItems.map((item) => (
+                {workItems.slice(1).map((item) => (
                   <div
                     key={item.slug}
                     className={`selected-work-item${item.extraClass ? ` ${item.extraClass}` : ""}`}

@@ -9,7 +9,7 @@ type GalleryItem = ImageItem | StackItem;
 export default function GalleryMasonry({ items }: { items: GalleryItem[] }) {
   return (
     <ResponsiveMasonry
-      columnsCountBreakPoints={{ 350: 1, 600: 2, 900: 3 }}
+      columnsCountBreakPoints={{ 350: 1, 600: 2 }}
       gutterBreakpoints={{ 350: "0.75em", 600: "1em", 900: "1em" }}
     >
       <Masonry sequential>

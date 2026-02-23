@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dianagots.com"),
   title: "Diana Gots - Brand Marketing & Content Strategy",
   description:
     "I'm Diana Gots, a brand marketing and content strategy expert. I help brands grow their business through brand strategy, DTC growth, and growth marketing.",
@@ -9,9 +10,7 @@ export const metadata: Metadata = {
     title: "Diana Gots - Brand Marketing & Content Strategy",
     description:
       "I'm Diana Gots, a brand marketing and content strategy expert. I help brands grow their business through brand strategy, DTC growth, and growth marketing.",
-    images: [
-      "https://cdn.prod.website-files.com/63186de99f692377753c6ed7/632d71ce07482b19dabec4cb_open_graph%20(1).jpg",
-    ],
+    images: ["/imgs/footer.png"],
     type: "website",
   },
   twitter: {
@@ -19,9 +18,7 @@ export const metadata: Metadata = {
     title: "Diana Gots - Brand Marketing & Content Strategy",
     description:
       "I'm Diana Gots, a brand marketing and content strategy expert. I help brands grow their business through brand strategy, DTC growth, and growth marketing.",
-    images: [
-      "https://cdn.prod.website-files.com/63186de99f692377753c6ed7/632d71ce07482b19dabec4cb_open_graph%20(1).jpg",
-    ],
+    images: ["/imgs/footer.png"],
   },
   icons: {
     icon: "https://cdn.prod.website-files.com/63186de99f692377753c6ed7/63186e5fd8d88871d8d456ac_Favicon%20(1).png",

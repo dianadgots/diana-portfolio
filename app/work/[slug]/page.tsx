@@ -62,7 +62,7 @@ export default async function WorkPage({ params }: Props) {
                 borderBottom: "1px solid #e00",
                 paddingTop: "0.3em",
                 paddingBottom: "2em",
-                marginBottom: "0.5em",
+                marginBottom: "2.5em",
               }}
             />
             {"projectDetails" in item && item.projectDetails && (
@@ -75,7 +75,7 @@ export default async function WorkPage({ params }: Props) {
                 </p>
               </div>
             )}
-            {(() => {
+            {!("noHero" in item && item.noHero) && (() => {
               const heroVideo = item.gallery?.find(
                 (m) => (("type" in m && m.type === "video") || (m.src && /\.(mp4|webm|ogg|mov)$/i.test(m.src))) && !("galleryLeft" in m && m.galleryLeft)
               );
@@ -121,7 +121,8 @@ export default async function WorkPage({ params }: Props) {
               const filtered = item.gallery?.filter(
                 (m) => !("type" in m && m.type === "video") && !(m.src && /\.(mp4|webm|ogg|mov)$/i.test(m.src))
               ) ?? [];
-              const images = heroVideo ? filtered : filtered.slice(1);
+              const noHero = "noHero" in item && item.noHero;
+              const images = heroVideo ? filtered : noHero ? filtered : filtered.slice(1);
               const belowImage = images.find((m) => "belowColumns" in m && m.belowColumns);
               const masonryItems = images.filter((m) => !("belowColumns" in m && m.belowColumns));
               if (!images || images.length === 0) return null;

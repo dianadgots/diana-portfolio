@@ -42,8 +42,9 @@ export const workItems = [
   {
     slug: "cloak-and-dagger-nyc",
     title: "Cloak and Dagger NYC",
-    frontImg: "/imgs/public/imgs/selected_work/3.png",
+    frontImg: "/imgs/public/imgs/c%26d%20work%201/1.png",
     frontAlt: "Cloak and Dagger NYC",
+    noHero: true,
     tags: [
       { label: "social media", black: false },
       { label: "content creation", black: false },
@@ -52,7 +53,12 @@ export const workItems = [
     titleTop: true,
     externalUrl: "https://www.cloakanddaggernyc.com/",
     gallery: [
-      { src: "/imgs/public/imgs/selected_work/3.png", alt: "Cloak and Dagger NYC" },
+      { src: "/imgs/public/imgs/c%26d%20work%201/1.png", alt: "Cloak and Dagger NYC" },
+      { src: "/imgs/public/imgs/c%26d%20work%201/2.png", alt: "Cloak and Dagger NYC" },
+      { src: "/imgs/public/imgs/c%26d%20work%201/3.png", alt: "Cloak and Dagger NYC" },
+      { src: "/imgs/public/imgs/c%26d%20work%201/4.png", alt: "Cloak and Dagger NYC" },
+      { src: "/imgs/public/imgs/c%26d%20work%201/5.png", alt: "Cloak and Dagger NYC" },
+      { src: "/imgs/public/imgs/c%26d%20work%201/6.png", alt: "Cloak and Dagger NYC" },
     ],
   },
   {

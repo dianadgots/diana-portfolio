@@ -137,6 +137,20 @@ body {
 }
 
 @media screen and (max-width: 767px) {
+  /* First item: same size as grid items on mobile */
+  .selected-work-item-first .selected-work-image-ratio {
+    padding-top: 100% !important;
+  }
+
+  .selected-work-item-first .front-selected-ratio {
+    width: 25.69em !important;
+    max-width: none;
+  }
+
+  .selected-work-item-first .front-selected-height {
+    padding-top: 141.12% !important;
+  }
+
   .hide-mobile {
     display: none !important;
   }

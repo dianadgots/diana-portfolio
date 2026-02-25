@@ -129,6 +129,25 @@ body {
   display: none;
 }
 
+/* ── Home Images Hover Animation ─────────────────────── */
+
+.home-img-ration {
+  overflow: hidden;
+}
+
+/* Swap 3.png for 5.jpg on mobile */
+.home-img-mobile-only {
+  display: none !important;
+}
+
+.home-img {
+  transition: transform 0.4s ease !important;
+}
+
+.home-img:hover {
+  transform: scale(1.07) !important;
+}
+
 /* ── Mobile Overrides ────────────────────────────────── */
 
 html,
@@ -137,6 +156,71 @@ body {
 }
 
 @media screen and (max-width: 767px) {
+  .home-img-section {
+    overflow: visible !important;
+    height: auto !important;
+    position: relative !important;
+    width: 100% !important;
+  }
+
+  .home-img-wrapper {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    overflow: visible !important;
+    height: auto !important;
+    gap: 0.5em !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+  }
+
+  .home-img-col {
+    flex: 0 0 calc(50% - 0.25em) !important;
+    width: calc(50% - 0.25em) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5em !important;
+  }
+
+  /* Hide 3rd column so we get a clean 2×2 grid */
+  .home-img-col:nth-child(3) {
+    display: none !important;
+  }
+
+  .home-img-ration {
+    width: 100% !important;
+    position: relative !important;
+    padding-top: 125% !important;
+    flex: none !important;
+  }
+
+  .home-img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transition: transform 0.4s ease !important;
+  }
+
+  .home-img-object-top {
+    object-fit: contain !important;
+    object-position: top center !important;
+  }
+
+  /* Show 5.jpg instead of 3.png in that slot on mobile */
+  .home-img-slot-swap .home-img-desktop-only {
+    display: none !important;
+  }
+
+  .home-img-slot-swap .home-img-mobile-only {
+    display: block !important;
+  }
+
+  .hero-content {
+    padding-top: 10em;
+    padding-bottom: 10em;
+  }
+
   /* First item: same size as grid items on mobile */
   .selected-work-item-first .selected-work-image-ratio {
     padding-top: 100% !important;
@@ -149,6 +233,12 @@ body {
 
   .selected-work-item-first .front-selected-height {
     padding-top: 141.12% !important;
+  }
+
+  /* Move skill tags above images on mobile */
+  .selected-work-item {
+    display: flex !important;
+    flex-direction: column-reverse !important;
   }
 
   .hide-mobile {
@@ -189,12 +279,12 @@ body {
   }
 
   .hero-content {
-    padding-top: 15em;
+    padding-top: 8em;
     padding-bottom: 10em;
   }
 
   .home-img-ration {
-    width: 85vw;
+    width: 100% !important;
     max-width: 100%;
   }
 
